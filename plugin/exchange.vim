@@ -336,6 +336,11 @@ command! -bar XchangeHighlightToggle call s:highlight_toggle()
 command! -bar XchangeHighlightEnable call s:highlight_toggle(1)
 command! -bar XchangeHighlightDisable call s:highlight_toggle(0)
 
+augroup vim_exchange
+    autocmd!
+    autocmd ColorScheme * XchangeHighlightToggle | XchangeHighlightToggle
+augroup END
+
 XchangeHighlightEnable
 
 command! -bar XchangeClear call s:exchange_clear()
