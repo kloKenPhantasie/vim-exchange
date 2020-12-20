@@ -340,6 +340,11 @@ XchangeHighlightEnable
 
 command! -bar XchangeClear call s:exchange_clear()
 
+augroup vim_exchange
+	autocmd!
+	autocmd ColorScheme * XchangeHighlightEnable
+augroup END
+
 if exists('g:exchange_no_mappings')
 	finish
 endif
